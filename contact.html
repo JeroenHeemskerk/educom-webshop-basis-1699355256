@@ -12,6 +12,40 @@ contact
  <li><a href="file:///C:/xampp/htdocs/educom-webshop-basis-1699355256/about.html">ABOUT</a></li>
  <li><a href="file:///C:/xampp/htdocs/educom-webshop-basis-1699355256/contact.html">CONTACT</a></li>
 </ul>
+ <form action="/action_page.php">
+  <label for="aanhef">Aanhef:</label><br>
+  <select type="select" id="aanhef" name="aanhef">
+   <option value="Dhr.">Dhr.</option>
+   <option value="Mvr.">Mvr.</option>
+   <option value="Reiziger">Reiziger</option>
+  </select><br>
+  <label for="naam">Naam:</label><br>
+  <input type="text" id="naam" name="naam"<br><br>
+  <label for="email">E-mailadres:</label><br>
+  <input type="text" id="email" name="email"<br><br>
+  <label for="telefoon">Telefoonnummer:</label><br>
+  <input type="number" id="telefoon" name="telefoon"<br><br>
+  <label for="straat">Straat:</label><br>
+  <input type="text" id="straat" name="straat"<br><br>
+  <label for="huis">Huisnummer:</label><br>
+  <input type="number" id="huis" name="huis"<br><br>
+  <label for="toevoeging">Toevoeging Huisnummer:</label><br>
+  <input type="text" id="toevoeging" name="toevoeging"<br><br>
+  <label for="postcode">Postcode:</label><br>
+  <input type="text" id="postcode" name="postcode"<br><br>
+  <label for="woonplaats">Woonplaats:</label><br>
+  <input type="text" id="woonplaats" name="woonplaats"<br><br>
+  <label for="communicatievoorkeur">Communicatievoorkeur</label><br>
+  <input type="radio" id="voorkeur-email" name="communicatievoorkeur" value="email">
+  <label for="voorkeur-email">E-mail</label>
+  <input type="radio" id="voorkeur-telefoon" name="communicatievoorkeur" value="telefoon">
+  <label for="voorkeur-telefoon">Telefoon</label>
+  <input type="radio" id="voorkeur-post" name="communicatievoorkeur" value="post">
+  <label for="voorkeur-post">Post</label><br>
+  <label for="klacht">Waar wilt u contact over opnemen?</label><br>
+  <textarea name="klacht" rows="10" cols="30"></textarea><br><br>
+  <input type="submit" value="Submit"></input>
+</form> 
 </body>
 <footer>&copy 2023 Rogier Be</footer>
 </html> 
