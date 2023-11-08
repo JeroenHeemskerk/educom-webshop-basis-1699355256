@@ -1,1 +1,30 @@
 /* Cascade Style Sheet for this website */
+
+*{
+	max-width: 800px;
+	text-align: center;
+}
+
+h1.title{
+	font-size: 48px;
+	text-align: center;
+}
+
+ul.menu{
+	list-style-type: none;
+}
+
+ul.menu li {
+	color: white;
+	margin: 30px 30px 30px 30px;
+	border-style: outset;
+	background-color: blue;
+}
+
+ul.menu li > a{
+	color: white;
+}
+
+form.contact{
+	
+}
