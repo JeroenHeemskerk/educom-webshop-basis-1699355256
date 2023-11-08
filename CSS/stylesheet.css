@@ -3,6 +3,7 @@
 *{
 	max-width: 800px;
 	text-align: center;
+	font-size: 12px;
 }
 
 h1.title{
@@ -14,17 +15,56 @@ ul.menu{
 	list-style-type: none;
 }
 
-ul.menu li {
+ul.menu li{
 	color: white;
 	margin: 30px 30px 30px 30px;
 	border-style: outset;
 	background-color: blue;
+	display: inline;
+}
+
+ul.about li{
+	color: DarkGrey;
+}
+
+p.textstyle{
+	color: DarkGrey;
+}
+
+form.contact label{
+/*Ik wilde graag zorgen dat de form er een beetje mooi uitzag. Als het gecentreerd is, 
+staan de inputvelden niet mooi boven elkaar. Ik probeerde daarom de labels links te alignen en
+de inputvelden te centreren. Dit is niet gelukt.
+*/
+	text-align: left;
+	color: DarkGrey;
 }
 
 ul.menu li > a{
 	color: white;
+    text-decoration: none;
 }
 
-form.contact{
-	
+form.contact input:not([type=radio]){
+    width: 400px;	
+}
+
+/*Ik heb geprobeerd op deze manier een line break te krijgen na elk inputveld. Dat is niet gelukt. 
+
+form.contact input::after{
+	content: '\a';
+	whitespace: pre;
+}
+*/
+
+
+form.contact textarea{
+	width: 400px;
+}
+
+footer{
+	text-align: right;
+	font-size: 10px;
+	background-color: black;
+	color: white;
 }
