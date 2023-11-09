@@ -1,23 +1,25 @@
 /* Cascade Style Sheet for this website */
 
-*{
-	max-width: 800px;
-	text-align: center;
-	font-size: 12px;
-}
-
 h1.title{
 	font-size: 48px;
-	text-align: center;
 }
 
 ul.menu{
 	list-style-type: none;
 }
 
+.center{
+	max-width: 800px;
+	margin: auto;
+	text-align: left;
+	font-size: 12px;
+}
+
 ul.menu li{
 	color: white;
-	margin: 30px 30px 30px 30px;
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	border-style: outset;
 	background-color: blue;
 	display: inline;
@@ -32,12 +34,8 @@ p.textstyle{
 }
 
 form.contact label{
-/*Ik wilde graag zorgen dat de form er een beetje mooi uitzag. Als het gecentreerd is, 
-staan de inputvelden niet mooi boven elkaar. Ik probeerde daarom de labels links te alignen en
-de inputvelden te centreren. Dit is niet gelukt.
-*/
-	text-align: left;
 	color: DarkGrey;
+	list-style-type: none;
 }
 
 ul.menu li > a{
@@ -48,15 +46,6 @@ ul.menu li > a{
 form.contact input:not([type=radio]){
     width: 400px;	
 }
-
-/*Ik heb geprobeerd op deze manier een line break te krijgen na elk inputveld. Dat is niet gelukt. 
-
-form.contact input::after{
-	content: '\a';
-	whitespace: pre;
-}
-*/
-
 
 form.contact textarea{
 	width: 400px;
