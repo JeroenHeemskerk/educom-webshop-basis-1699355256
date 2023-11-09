@@ -11,38 +11,30 @@ $salutationErr = $nameErr = $preferenceErr = $messageErr = $emailErr = $phoneErr
 $salutation = $name = $preference = $message = $email = $phone = $street = $house = $addition = $zipcode = $residence = "";
 $valid = false;
 
-function test_input($data) {
-  /*$data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  */
-  $data = $data;
-  return $data;
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["salutation"])) {
     $salutationErr = "Aanhef is verplicht";
   } else {
-    $salutation = test_input($_POST["salutation"]);
+    $salutation = $_POST["salutation"];
   }
 	
   if (empty($_POST["name"])) {
     $nameErr = "Naam is verplicht";
   } else {
-    $name = test_input($_POST["name"]);
+    $name = $_POST["name"];
   }
   
   if (empty($_POST["communicationpreference"])) {
     $preferenceErr = "Communicatievoorkeur is verplicht";
   } else {
-    $preference = test_input($_POST["communicationpreference"]);
+    $preference = $_POST["communicationpreference"];
   }
   
   if (empty($_POST["message"])) {
     $messageErr = "Bericht is verplicht";
   } else {
-    $message = test_input($_POST["message"]);
+    $message = $_POST["message"];
   }
   
   
@@ -50,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($preference == "email"){
       $emailErr = "E-mailadres is verplicht";
 	} else {
-	  $email = test_input($_POST["email"]);
+	  $email = $_POST["email"];
 	}
   }
   
@@ -58,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($preference == "phone"){
       $phoneErr = "Telefoon is verplicht";
 	} else {
-	  $phone = test_input($_POST["phone"]);
+	  $phone = $_POST["phone"];
 	}
   }
   
@@ -79,21 +71,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $residenceErr = "Vul a.u.b. straat in";
     }
   } else {
-	$street = test_input($_POST["street"]);
+	$street = $_POST["street"];
 	if (empty($_POST["house"] )) {
 	  $houseErr = "Vul a.u.b. huisnummer in";
     } else {
-	  $house = test_input($_POST["house"]);
+	  $house = $_POST["house"];
 	}
 	if (empty($_POST["zipcode"] )) {
 	  $zipcodeErr = "Vul a.u.b. postcode in";
     } else {
-	  $zipcode = test_input($_POST["zipcode"]);
+	  $zipcode = $_POST["zipcode"];
 	}
     if (empty($_POST["residence"] )) {
 	  $residenceErr = "Vul a.u.b. woonplaats in";
     } else {
-	  $residence = test_input($_POST["residence"]);
+	  $residence = $_POST["residence"];
 	}
 	
   }
