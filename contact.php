@@ -11,7 +11,6 @@ $salutationErr = $nameErr = $preferenceErr = $messageErr = $emailErr = $phoneErr
 $salutation = $name = $preference = $message = $email = $phone = $street = $house = $addition = $zipcode = $residence = "";
 $valid = false;
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["salutation"])) {
     $salutationErr = "Aanhef is verplicht";
@@ -100,8 +99,8 @@ if ($salutationErr == "" and $nameErr == "" and $preferenceErr == "" and $messag
 Contact
 </h1>
 <ul class="menu">
- <li><a href="index.html">HOME</a></li>
- <li><a href="about.html">ABOUT</a></li>
+ <li><a href="home.php">HOME</a></li>
+ <li><a href="about.php">ABOUT</a></li>
  <li><a href="contact.php">CONTACT</a></li>
 </ul>
 <?php if(!$valid){ ?>
@@ -157,7 +156,7 @@ Contact
   <span class="error"><?php echo $preferenceErr;?></span><br>
   
   <label for="message">Waar wilt u contact over opnemen?</label>
-  <textarea name="message" rows="10" cols="30"></textarea>
+  <textarea name="message" rows="10" cols="30"><?php echo $message ?></textarea>
   <span class="error"><?php echo $messageErr;?></span><br>
   
   <input type="submit" value="Submit">
