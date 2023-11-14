@@ -1,6 +1,5 @@
 <?php
-
 function postPage(){
-  return('contact');
+  return($_POST['page']);
 }
 ?>

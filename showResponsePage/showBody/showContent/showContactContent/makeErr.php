@@ -43,7 +43,6 @@ function makeErr($inputs, $errs){
   $address = false;
   $adress = ($inputs['preference'] == 'mail' || !empty($inputs['street']) || !empty($inputs['house']) || !empty($inputs['addition']) || 
                                          !empty($inputs['zipcode']) || !empty($inputs['residence']));
-  var_dump($address);
   if ($address){
     if (empty($inputs["street"])){
       $errs['street'] = "Vul a.u.b. straat in.";

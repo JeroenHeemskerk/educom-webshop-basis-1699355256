@@ -58,8 +58,11 @@ function showForm($inputs, $errs){
   <label for="message">Waar wilt u contact over opnemen?</label>
   <textarea name="message" rows="10" cols="30">'.$inputs['message'].'</textarea>
   <span class="error">'.$errs['message'].'</span><br>
+
   
   <input type="submit" value="Submit">
+  <input type="hidden" name="page" value="contact">
  </form>
+ 
  ';}
 ?>

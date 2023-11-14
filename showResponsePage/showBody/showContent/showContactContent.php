@@ -19,7 +19,7 @@ function showContactContent(){
     showForm($inputs, $errs);
   }
   else{
-    showThanks();
+    showThanks($inputs);
   }
 }
 
