@@ -1,7 +1,6 @@
 <?php
 
 function showForm($inputs, $errs){
-  var_dump($inputs);
   echo '<form class="contact" method="post" action = "'; echo htmlspecialchars($_SERVER["PHP_SELF"]); echo '">
   <label for="salutation">Aanhef:</label><br>
   <select type="select" id="salutation" name="salutation">
@@ -44,14 +43,14 @@ function showForm($inputs, $errs){
   <input type="text" id="residence" name="residence" value="'. $inputs['residence'].'"></input>
   <span class="error">'.$errs['residence'].'</span><br>
   
-  <label for="communicationpreference">Communicatievoorkeur</label>
-  <input type="radio" id="email" name="communicationpreference" '; 
+  <label for="preference">Communicatievoorkeur</label>
+  <input type="radio" id="email" name="preference" '; 
   if (isset($inputs['preference']) && $inputs['preference']=="email") {echo "checked = checked";} echo 'value="email">
   <label for="email">E-mail</label>
-  <input type="radio" id="phone" name="communicationpreference" '; 
-if (isset($inputs['preference']) && $inputs['preference']=="phone") {echo "checked = checked";} echo 'value="phone">
+  <input type="radio" id="phone" name="preference" '; 
+  if (isset($inputs['preference']) && $inputs['preference']=="phone") {echo "checked = checked";} echo 'value="phone">
   <label for="phone">Telefoon</label>
-  <input type="radio" id="mail" name="communicationpreference" '; 
+  <input type="radio" id="mail" name="preference" '; 
   if (isset($inputs['preference']) && $inputs['preference']=="mail") {echo "checked = checked";} echo 'value="mail">
   <label for="mail">Post</label>
   <span class="error">'.$errs['preference'].'</span><br>

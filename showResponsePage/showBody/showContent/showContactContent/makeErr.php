@@ -1,84 +1,64 @@
 <?php
 function makeErr($inputs, $errs){
-  if (empty($_POST["salutation"])) {
+  
+  function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+  
+  foreach ($inputs as $key => $value){
+  if (isset($_POST[$key])){
+      $inputs[$key] = test_input($_POST[$key]);
+    }
+  }
+  if (empty($inputs["salutation"])) {
     $errs['salutation'] = "Aanhef is verplicht";
-  } else {
-    $inputs['salutation'] = $_POST["salutation"];
-  }
-    
-  if (empty($_POST["name"])) {
+  } 
+  if (empty($inputs["name"])) {
     $errs['name'] = "Naam is verplicht";
-  } else {
-    $inputs['name'] = $_POST["name"];
   }
     
-  if (empty($_POST["communicationpreference"])) {
+  if (empty($inputs["preference"])) {
     $errs['preference'] = "Communicatievoorkeur is verplicht";
-  } else {
-    $inputs['preference'] = $_POST["communicationpreference"];
   }
     
-  if (empty($_POST["message"])) {
+  if (empty($inputs["message"])) {
     $errs['message'] = "Bericht is verplicht";
-  } else {
-    $inputs['message'] = $_POST["message"];
-  }
+  } 
     
-    
-  if (empty($_POST["email"])) {
+  if (empty($inputs["email"])) {
     if ($inputs['preference'] == "email"){
       $errs['email'] = "E-mailadres is verplicht";
-    } else {
-      $inputs['email'] = $_POST["email"];
     }
   }
     
-  if (empty($_POST["phone"])) {
+  if (empty($inputs["phone"])) {
     if ($inputs['preference'] == "phone"){
       $errs['phone'] = "Telefoon is verplicht";
-    } else {
-      $inputs['phone'] = $_POST["phone"];
     }
   }
-    
-  if (empty($_POST["street"])) {
-    if ($inputs['preference'] == "mail"){
-      $errs['street'] = "Straat is verplicht";
+  
+  $address = false;
+  $adress = ($inputs['preference'] == 'mail' || !empty($inputs['street']) || !empty($inputs['house']) || !empty($inputs['addition']) || 
+                                         !empty($inputs['zipcode']) || !empty($inputs['residence']));
+  var_dump($address);
+  if ($address){
+    if (empty($inputs["street"])){
+      $errs['street'] = "Vul a.u.b. straat in.";
+    }
+    if (empty($inputs["house"] )) {
+      $errs['house'] = "Vul a.u.b. huisnummer in.";
+    }
+    if (empty($inputs["zipcode"] )) {
+      $errs['zipcode'] = "Vul a.u.b. postcode in.";
     } 
-    if (!empty($_POST["house"] )) {
-      $errs['house'] = "Vul a.u.b. straat in";
-      $inputs['house'] = $_POST["house"];
-    }
-    if (!empty($_POST["addition"] )) {
-      $errs['addition'] = "Vul a.u.b. straat in";
-      $inputs['zipcode'] = $_POST["zipcode"];
-    }
-    if (!empty($_POST["zipcode"] )) {
-      $errs['zipcode'] = "Vul a.u.b. straat in";
-      $inputs['zipcode'] = $_POST["zipcode"];
-    }
-    if (!empty($_POST["residence"] )) {
-      $errs['residence'] = "Vul a.u.b. straat in";
-      $inputs['residence'] = $_POST["residence"];
-    }
-  } else {
-    $inputs['street'] = $_POST["street"];
-    if (empty($_POST["house"] )) {
-      $errs['house'] = "Vul a.u.b. huisnummer in";
-    } else {
-      $inputs['house'] = $_POST["house"];
-    }
-    if (empty($_POST["zipcode"] )) {
-      $errs['zipcode'] = "Vul a.u.b. postcode in";
-    } else {
-      $inputs['zipcode'] = $_POST["zipcode"];
-    }
-    if (empty($_POST["residence"] )) {
-      $errs['residence'] = "Vul a.u.b. woonplaats in";
-    } else {
-      $inputs['residence'] = $_POST["residence"];
-    }
+    if (empty($inputs["residence"] )) {
+      $errs['residence'] = "Vul a.u.b. woonplaats in.";
+    } 
   }
-  return(array($inputs, $errs));
+  
+  return array($inputs, $errs);
 }
 ?>
