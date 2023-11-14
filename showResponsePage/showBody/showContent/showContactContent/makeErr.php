@@ -1,16 +1,12 @@
 <?php
+
+include('testInput.php')
+
 function makeErr($inputs, $errs){
-  
-  function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
   
   foreach ($inputs as $key => $value){
   if (isset($_POST[$key])){
-      $inputs[$key] = test_input($_POST[$key]);
+      $inputs[$key] = testInput($_POST[$key]);
     }
   }
   if (empty($inputs["salutation"])) {
