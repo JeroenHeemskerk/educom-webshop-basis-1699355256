@@ -1,15 +1,16 @@
 <?php
 
 function showForm($inputs, $errs){
+  var_dump($inputs);
   echo '<form class="contact" method="post" action = "'; echo htmlspecialchars($_SERVER["PHP_SELF"]); echo '">
   <label for="salutation">Aanhef:</label><br>
   <select type="select" id="salutation" name="salutation">
    <option value=""></option>
    <option value="Dhr." '; if ($inputs['salutation'] == "Dhr."){echo 'selected = "selected"';} echo '>Dhr.</option>
    <option value="Mvr." '; if ($inputs['salutation'] == "Mvr."){echo 'selected = "selected"';} echo '>Mvr.</option>
-   <option value="Reiziger" ';if ($inputs['$salutation'] == "Reiziger"){echo 'selected = "selected"';} echo '>Reiziger</option>
+   <option value="Reiziger" '; if ($inputs['salutation'] == "Reiziger"){echo 'selected = "selected"';} echo '>Reiziger</option>
   </select>
-  <span class="error">'.$salutationErr.'</span><br>
+  <span class="error">'.$errs['salutation'].'</span><br>
   
   <label for="name">Naam:</label>
   <input type="text" id="name" name="name" value="'.$inputs['name'].'"></input>
@@ -44,12 +45,15 @@ function showForm($inputs, $errs){
   <span class="error">'.$errs['residence'].'</span><br>
   
   <label for="communicationpreference">Communicatievoorkeur</label>
-  <input type="radio" id="preference-email" name="communicationpreference" '; if (isset($preference) && $inputs['preference']=="email") echo "checked"; echo 'value="email">
-  <label for="preference-email">E-mail</label>
-  <input type="radio" id="preference-phone" name="communicationpreference" '; if (isset($preference) && $inputs['preference']=="phone") echo "checked"; echo 'value="phone">
-  <label for="preference-phone">Telefoon</label>
-  <input type="radio" id="preference-mail" name="communicationpreference" '; if (isset($preference) && $inputs['preference']=="mail") echo "checked"; echo 'value="mail">
-  <label for="preference-mail">Post</label>
+  <input type="radio" id="email" name="communicationpreference" '; 
+  if (isset($inputs['preference']) && $inputs['preference']=="email") {echo "checked = checked";} echo 'value="email">
+  <label for="email">E-mail</label>
+  <input type="radio" id="phone" name="communicationpreference" '; 
+if (isset($inputs['preference']) && $inputs['preference']=="phone") {echo "checked = checked";} echo 'value="phone">
+  <label for="phone">Telefoon</label>
+  <input type="radio" id="mail" name="communicationpreference" '; 
+  if (isset($inputs['preference']) && $inputs['preference']=="mail") {echo "checked = checked";} echo 'value="mail">
+  <label for="mail">Post</label>
   <span class="error">'.$errs['preference'].'</span><br>
   
   <label for="message">Waar wilt u contact over opnemen?</label>

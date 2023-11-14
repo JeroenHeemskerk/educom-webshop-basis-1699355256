@@ -5,9 +5,9 @@ include('showAboutContent/showSecondParagraph.php');
 include('showAboutContent/showHobbies.php');
 
 function showAboutContent(){
-  showFirstParagraph;
-  showSecondParagraph;
-  showHobbies;
+  showFirstParagraph();
+  showSecondParagraph();
+  showHobbies();
 }
 
 ?>

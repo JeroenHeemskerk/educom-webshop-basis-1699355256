@@ -8,17 +8,16 @@ include ('showContent/show404Content.php');
 function showContent($page){
   switch($page){
     case 'home':
-      showHomeContent;
+      showHomeContent();
       break;
     case 'about':
-      showAboutContent;
+      showAboutContent();
       break;
     case 'contact':
-      showContactContent;
+      showContactContent();
       break;
-    case '404':
-      show404Content;
-      break;
+    default:
+      show404Content();
   }
 }
 ?>

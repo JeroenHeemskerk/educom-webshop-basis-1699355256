@@ -5,9 +5,9 @@ function getRequestedPage(){
   
     if ($_SERVER["REQUEST_METHOD"] == "POST")
 	  {
-      return('postPage()');
+      return(postPage());
 	  } else {
-      return('getPage()');
+      return(getPage());
     }    
   }
 ?>

@@ -4,10 +4,10 @@ include('showHead/showTitle.php');
 include('showHead/setStyle.php');
 include('showHead/endTagHead.php');
 
-function showHead(){
-  startTagHead;
-  showTitle;
-  setStyle;
-  endTagHead;
+function showHead($page){
+  startTagHead();
+  showTitle($page);
+  setStyle();
+  endTagHead();
 }
 ?>

@@ -7,13 +7,13 @@ include('showBody/showContent.php');
 include('showBody/showFooter.php');
 include('showBody/bodyEnd.php');
 
-function showBody(){
-  bodyStart;
-  showHeader;
-  showMenu;
+function showBody($page){
+  bodyStart();
+  showHeader($page);
+  showMenu();
   showContent($page);
-  showFooter;
-  bodyEnd;
+  showFooter();
+  bodyEnd();
 }
 
 ?>

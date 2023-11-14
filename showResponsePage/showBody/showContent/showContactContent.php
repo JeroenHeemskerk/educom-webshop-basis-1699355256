@@ -11,8 +11,10 @@ function showContactContent(){
   $inputs = initInputs();
   $errs = initErrs();
   $valid = false;
-  $errs = makeErr();
-  $valid = validate();
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    list($inputs, $errs) = makeErr($inputs, $errs);
+    $valid = validate($valid, $errs);
+  }
   if(!$valid){
     showForm($inputs, $errs);
   }

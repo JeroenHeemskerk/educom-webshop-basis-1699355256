@@ -1,6 +1,6 @@
 <?php
 
-function showTitle(){
+function showTitle($page){
   switch($page){
     case 'home':
       echo '<title>Home</title>';
@@ -11,9 +11,8 @@ function showTitle(){
     case 'contact':
       echo '<title>Contact</title>';
       break;
-    case '404':
+    default:
       echo '<title>404</title>';
-      break;
   }
 }
 ?>
