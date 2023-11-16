@@ -3,8 +3,8 @@
   include('getRequestedPage.php');
   include('showResponsePage.php');
   
-  $page = getrequestedPage();
-  showResponsePage($page);
+  list($page, $inputs, $errs) = getrequestedPage();
+  showResponsePage($page, $inputs, $errs);
   ?>
 </body>
 </html>

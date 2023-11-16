@@ -7,11 +7,11 @@ include('showBody/showContent.php');
 include('showBody/showFooter.php');
 include('showBody/bodyEnd.php');
 
-function showBody($page){
+function showBody($page, $inputs, $errs){
   bodyStart();
   showHeader($page);
   showMenu();
-  showContent($page);
+  showContent($page, $inputs, $errs);
   showFooter();
   bodyEnd();
 }

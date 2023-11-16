@@ -9,10 +9,10 @@ function showDocumentStart(){
   echo '<!DOCTYPE html> <html>';
 }
 
-function showResponsePage($page){
+function showResponsePage($page, $inputs, $errs){
   showDocumentStart();
   showHead($page);
-  showBody($page);
+  showBody($page, $inputs, $errs);
   showDocumentEnd();
 }
 

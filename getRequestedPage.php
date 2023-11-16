@@ -7,7 +7,10 @@ function getRequestedPage(){
 	  {
       return(postPage());
 	  } else {
-      return(getPage());
+      $page = getPage();
+      $inputs = initInputs($page);
+      $errs = initErrs($page);
+      return array($page, $inputs, $errs);
     }    
   }
 ?>

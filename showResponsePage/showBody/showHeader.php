@@ -10,6 +10,12 @@ function showHeader($page){
     case 'contact':
       echo '<h1 class="title">Contact</h1>';
       break;
+    case 'register':
+      echo '<h1 class="title">Register</h1>';
+      break;
+    case 'login': 
+      echo '<h1 class="title">Login</h1>';
+      break;
     default:
       echo '<h1 class="title">Error 404:</h1>';
   }

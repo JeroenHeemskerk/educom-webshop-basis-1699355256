@@ -6,6 +6,8 @@ function showMenu(){
   showMenuItem('home', 'HOME');
   showMenuItem('about', 'ABOUT');
   showMenuItem('contact', 'CONTACT');
+  showMenuItem('register', 'register');
+  showMenuItem('login', 'login');
   echo '</ul>';
 }     
 ?>
