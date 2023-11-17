@@ -1,0 +1,59 @@
+/* Cascade Style Sheet for this website */
+
+h1.title{
+	font-size: 48px;
+}
+
+ul.menu{
+	list-style-type: none;
+}
+
+.center{
+	max-width: 800px;
+	margin: auto;
+	text-align: left;
+	font-size: 12px;
+}
+
+ul.menu li{
+	color: white;
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-style: outset;
+	background-color: blue;
+	display: inline;
+}
+
+ul.about li{
+	color: DarkGrey;
+}
+
+p.textstyle{
+	color: DarkGrey;
+}
+
+form.contact label{
+	color: DarkGrey;
+	list-style-type: none;
+}
+
+ul.menu li > a{
+	color: white;
+    text-decoration: none;
+}
+
+form.contact input:not([type=radio]){
+    width: 400px;	
+}
+
+form.contact textarea{
+	width: 400px;
+}
+
+footer{
+	text-align: right;
+	font-size: 10px;
+	background-color: black;
+	color: white;
+}
