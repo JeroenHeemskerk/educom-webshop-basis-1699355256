@@ -5,6 +5,7 @@
   include($dir.'presentation/showResponsePage.php');
   include($dir.'data/dataRead.php');
   
+  session_start();
   makeDataUsable();
   list($page, $inputs, $errs) = getrequestedPage();
   showResponsePage($page, $inputs, $errs);

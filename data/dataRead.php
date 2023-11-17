@@ -42,6 +42,15 @@ function emailExists($email){
     return $exists;
 }
 
+function getName($email){
+  $userData = makeDataUsable();
+  foreach ($userData as $value){
+    if ($value[0] == $email){
+      return $value[1];
+    }
+  }
+}
+
 function validLogin($email, $password){
   $userData = makeDataUsable();
     $valid = false;
